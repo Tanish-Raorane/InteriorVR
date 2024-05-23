@@ -13,6 +13,7 @@ public class ShowGameMenu : MonoBehaviour
     private float spawnDistance = 1;
 
     public GameObject leftRay, rightRay;
+    public HotspotMenu HM;
     
     
     //public XRInteractorLineVisual xrLine;
@@ -39,6 +40,7 @@ public class ShowGameMenu : MonoBehaviour
         {
           if(!gameMenu.activeInHierarchy)
             {
+                HM.hotspotMenu.SetActive(false);
                 gameMenu.SetActive(true);
                 gameMenu.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
                 //xrLine.invalidColorGradient = newGradient;
