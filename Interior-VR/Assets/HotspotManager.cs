@@ -45,28 +45,98 @@ public class HotspotManager : MonoBehaviour
         Bedroom2.transform.SetParent(null);
         Bedroom3.transform.SetParent(null);
 
-        //All.transform.SetParent()
+        All.transform.SetParent(LivingRoom.transform);
+        Kitchen.transform.SetParent(LivingRoom.transform);
+        DiningRoom.transform.SetParent(LivingRoom.transform);
+        Bedroom1.transform.SetParent(LivingRoom.transform);
+        Bedroom2.transform.SetParent(LivingRoom.transform);
+        Bedroom3.transform.SetParent(LivingRoom.transform);
+        //xrOrigin.transform.rotation = LivingRoom.transform.rotation;
+        StartCoroutine(Coroutine(LivingRoom.transform.position, Maincamera.position, LivingRoom));
+       
 
     }
 
     public void OnPressKitchen()
     {
-        
+        All.transform.SetParent(null);
+        LivingRoom.transform.SetParent(null);
+        Kitchen.transform.SetParent(null);
+        DiningRoom.transform.SetParent(null);
+        Bedroom1.transform.SetParent(null);
+        Bedroom2.transform.SetParent(null);
+        Bedroom3.transform.SetParent(null);
+
+        All.transform.SetParent(Kitchen.transform);
+        LivingRoom.transform.SetParent(Kitchen.transform);
+        DiningRoom.transform.SetParent(Kitchen.transform);
+        Bedroom1.transform.SetParent(Kitchen.transform);
+        Bedroom2.transform.SetParent(Kitchen.transform);
+        Bedroom3.transform.SetParent(Kitchen.transform);
+
+        StartCoroutine(Coroutine(Kitchen.transform.position, Maincamera.position, Kitchen));
+
     }
 
     public void OnPressDiningRoom()
     {
+        All.transform.SetParent(null);
+        LivingRoom.transform.SetParent(null);
+        Kitchen.transform.SetParent(null);
+        DiningRoom.transform.SetParent(null);
+        Bedroom1.transform.SetParent(null);
+        Bedroom2.transform.SetParent(null);
+        Bedroom3.transform.SetParent(null);
+
+        All.transform.SetParent(DiningRoom.transform);
+        LivingRoom.transform.SetParent(DiningRoom.transform);
+        Kitchen.transform.SetParent(DiningRoom.transform);
+        Bedroom1.transform.SetParent(DiningRoom.transform);
+        Bedroom2.transform.SetParent(DiningRoom.transform);
+        Bedroom3.transform.SetParent(DiningRoom.transform);
+
+        StartCoroutine(Coroutine(DiningRoom.transform.position, Maincamera.position, DiningRoom));
 
     }
 
     public void OnPressBedroom1()
     {
+        All.transform.SetParent(null);
+        LivingRoom.transform.SetParent(null);
+        Kitchen.transform.SetParent(null);
+        DiningRoom.transform.SetParent(null);
+        Bedroom1.transform.SetParent(null);
+        Bedroom2.transform.SetParent(null);
+        Bedroom3.transform.SetParent(null);
 
+        All.transform.SetParent(Bedroom1.transform);
+        LivingRoom.transform.SetParent(Bedroom1.transform);
+        Kitchen.transform.SetParent(Bedroom1.transform);
+        DiningRoom.transform.SetParent(Bedroom1.transform);
+        Bedroom2.transform.SetParent(Bedroom1.transform);
+        Bedroom3.transform.SetParent(Bedroom1.transform);
+
+        StartCoroutine(Coroutine(Bedroom1.transform.position, Maincamera.position, Bedroom1));
     }
 
     public void OnPressBedroom2()
     {
+        All.transform.SetParent(null);
+        LivingRoom.transform.SetParent(null);
+        Kitchen.transform.SetParent(null);
+        DiningRoom.transform.SetParent(null);
+        Bedroom1.transform.SetParent(null);
+        Bedroom2.transform.SetParent(null);
+        Bedroom3.transform.SetParent(null);
 
+        All.transform.SetParent(Bedroom2.transform);
+        LivingRoom.transform.SetParent(Bedroom2.transform);
+        Kitchen.transform.SetParent(Bedroom2.transform);
+        DiningRoom.transform.SetParent(Bedroom2.transform);
+        Bedroom1.transform.SetParent(Bedroom2.transform);
+        Bedroom3.transform.SetParent(Bedroom2.transform);
+
+        StartCoroutine(Coroutine(Bedroom2.transform.position, Maincamera.position, Bedroom2));
     }
 
     public void OnPressBedroom3()
@@ -94,42 +164,30 @@ public class HotspotManager : MonoBehaviour
         Bedroom2.transform.SetParent(null);
         Bedroom3.transform.SetParent(null);
 
-
-
-
-        All.transform.SetParent(Kitchen.transform);
+        All.transform.SetParent(Bedroom3.transform);
+        LivingRoom.transform.SetParent(Bedroom3.transform);
         Kitchen.transform.SetParent(Bedroom3.transform);
-        //empty1.transform.position = Maincamera.position;
-        xrOrigin.transform.rotation = Bedroom3.transform.rotation;
+        DiningRoom.transform.SetParent(Bedroom3.transform);
+        Bedroom1.transform.SetParent(Bedroom3.transform);
+        Bedroom2.transform.SetParent(Bedroom3.transform);
         StartCoroutine(Coroutine(Bedroom3.transform.position, Maincamera.position, Bedroom3));
     }
 
-    public void OnPress2()
-    {
-
-        All.transform.SetParent(null);
-        Bedroom3.transform.SetParent(null);
-        Kitchen.transform.SetParent(null);
-       
-
-        All.transform.SetParent(Bedroom3.transform);
-        Bedroom3.transform.SetParent(Kitchen.transform);
-        //empty2.transform.position = Maincamera.position;
-        xrOrigin.transform.rotation = Kitchen.transform.rotation;
-        StartCoroutine(Coroutine(Kitchen.transform.position, Maincamera.position, Kitchen));
-    }
-
-
-    public IEnumerator Coroutine(Vector3 StartPosition, Vector3 EndPosition, GameObject empty)
+    public IEnumerator Coroutine(Vector3 StartPosition, Vector3 EndPosition, GameObject hotspot)
     {
         float time = 0;
         while (time < 1)
         {
-            empty.transform.position = Vector3.Lerp(StartPosition, EndPosition, time);
+            hotspot.transform.position = Vector3.Lerp(StartPosition, EndPosition, time);
             time += Time.deltaTime * LerpSpeed;
             yield return null;
         }
+
+        hotspot.transform.rotation = xrOrigin.transform.rotation;
+
     }
+
+    
     //public void SetHotspotOnIndex(int index)
     //{
     //    switch(index)

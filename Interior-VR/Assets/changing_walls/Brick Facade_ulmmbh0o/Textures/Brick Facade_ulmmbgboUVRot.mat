@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Brick Facade_ulmmbgbo
+  m_Name: Brick Facade_ulmmbgboUVRot
   m_Shader: {fileID: 4800000, guid: ea43688dbe5737b47ba3af8e38bac3be, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -29,6 +29,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Angle: 0
+    - _Angle: 1.575
     m_Colors: []
   m_BuildTextureStacks: []

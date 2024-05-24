@@ -47,5 +47,7 @@ public class HotspotMenu : MonoBehaviour
 
         hotspotMenu.transform.LookAt(new Vector3(Head.position.x, hotspotMenu.transform.position.y, Head.position.z));
         hotspotMenu.transform.forward *= -1;
+
+        hotspotMenu.transform.position = new Vector3(hotspotMenu.transform.position.x, Head.transform.position.y, hotspotMenu.transform.position.z);
     }
 }
