@@ -445,7 +445,11 @@ MonoBehaviour:
   Values:
   - {fileID: -1254056935177147125}
   - {fileID: -4877653978332927485}
+<<<<<<< Updated upstream
   - {fileID: -2356470595137738715}
+=======
+  - {fileID: 6758616041192010309}
+>>>>>>> Stashed changes
 --- !u!114 &996579945686947116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +686,22 @@ MonoBehaviour:
   extensionStrings:
   - XR_KHR_binding_modification
   - XR_EXT_dpad_binding
+--- !u!114 &6758616041192010309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: WebGL
+  m_EditorClassIdentifier: 
+  features: []
+  m_renderMode: 1
+  m_depthSubmissionMode: 0
+  m_symmetricProjection: 0
 --- !u!114 &7164088577775966686
 MonoBehaviour:
   m_ObjectHideFlags: 0
